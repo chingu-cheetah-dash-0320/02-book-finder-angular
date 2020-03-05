@@ -1,0 +1,23 @@
+.divStyle{
+    background-color: aqua;
+    padding: 15px;
+}
+
+.child-1{
+    background-color: orange;
+    }
+    .child-2{
+    background-color: yellow;
+    }
+    .child-3{
+    background-color: green;
+    }
+    #SearchField{
+        margin-top: 20px;
+    }
+
+
+    .card {margin-bottom: 10px;}
+    body{
+        background-color: beige;
+    }
