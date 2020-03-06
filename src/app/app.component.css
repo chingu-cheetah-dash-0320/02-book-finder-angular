@@ -21,3 +21,6 @@
     body{
         background-color: beige;
     }
+    mat-toolbar{
+        margin-bottom: 10px;
+    }

@@ -8,7 +8,7 @@ import { catchError } from 'rxjs/operators';
   providedIn: 'root'
 })
 export class BookService {
-  booksUrl = 'https://www.googleapis.com/books/v1/volumes?q=angular'
+  booksUrl = 'https://www.googleapis.com/books/v1/volumes?q='//angular+inauthor:""'
   //  booksUrl = 'https://www.googleapis.com/books/v1/volumes?q=flowers+inauthor:keyes'
 
   constructor(private http: HttpClient) { }
@@ -26,8 +26,10 @@ export class BookService {
     return throwError(errorMessage);
   }
 
-  public getBooks() {
-    return this.http.get(this.booksUrl).pipe(catchError(this.handleError));
+  public getBooks(query:string) {
+    console.log("Search String " + query);
+    return this.http.get(this.booksUrl+query).pipe(catchError(this.handleError));
+    
   }
 
 

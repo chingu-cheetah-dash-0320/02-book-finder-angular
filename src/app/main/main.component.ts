@@ -16,7 +16,8 @@ export class MainComponent implements OnInit {
   constructor(private bookService: BookService) { }
 
   ngOnInit(): void {
-      console.log(this.books);this.bookService.getBooks().subscribe((data) => {
+      console.log(this.books);
+      this.bookService.getBooks("Job Interview").subscribe((data) => {
       this.bookList = data;
       console.log(this.bookList.items);
       
@@ -27,9 +28,9 @@ export class MainComponent implements OnInit {
 
 
   onClickMe(str:string) {
-    this.bookService.getBooks().subscribe((data: any[]) => {
+    this.bookService.getBooks(str).subscribe((data) => {
       console.log(data);
-      this.books = data;
+      this.bookList = data;
 
     })
   }
