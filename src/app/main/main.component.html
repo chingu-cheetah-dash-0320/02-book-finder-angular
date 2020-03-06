@@ -1,11 +1,24 @@
-<h2>{{data}}</h2>
-<h2>{{username}}</h2>
+<mat-spinner *ngIf="books.length === 0"></mat-spinner>
+
 <div class="container">
   <div class="row">
     <div class="input-group mb-3" id="SearchField">
-      <input #searchText type="text" class="form-control" placeholder="Search by Author or Book Details" aria-label="Search by Author or Book Info" aria-describedby="basic-addon2">
+      <input
+        #searchText
+        type="text"
+        class="form-control"
+        placeholder="Search by Author or Book Details"
+        aria-label="Search by Author or Book Info"
+        aria-describedby="basic-addon2"
+      />
       <div class="input-group-append">
-        <button class="btn btn-outline-secondary" type="button" (click)="onClickMe(searchText.value)">Search</button>
+        <button
+          class="btn btn-outline-secondary"
+          type="button"
+          (click)="onClickMe(searchText.value)"
+        >
+          Search
+        </button>
       </div>
     </div>
   </div>
@@ -16,15 +29,21 @@
   fxLayout.lt-sm="column"
   fxLayoutAlign="space-evenly stretch"
 >
-  <ng-container *ngFor="let _ of [1, 2, 3, 4, 5, 6]">
+  <ng-container *ngFor="let book of bookList.items">
     <div
       class="card"
       fxFlex="0 1 calc(33.3% - 32px)"
       fxFlex.lt-md="0 1 calc(50% - 32px)"
-      fxFlex.lt-sm="100%"
+      fxFlex.lt-sm="0 1 calc(50% - 32px)"
     >
-      <app-book-detail></app-book-detail>
+      <app-book-detail
+        [title]="book.volumeInfo.title"
+        [subtitle]="book.volumeInfo.subtitle"
+        [publishedDate]="book.volumeInfo.publishedDate"
+        [author]="book.volumeInfo.authors[0]"
+        [description]="book.volumeInfo.description"
+        [imageLink]="book.volumeInfo.imageLinks.smallThumbnail"
+      ></app-book-detail>
     </div>
   </ng-container>
 </div>
-

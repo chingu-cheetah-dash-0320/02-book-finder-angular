@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { BookService} from '../services/book.service';
+import {BookResponse} from '../shared/booksResponse';
 
 @Component({
   selector: 'app-main',
@@ -9,23 +10,28 @@ import { BookService} from '../services/book.service';
 export class MainComponent implements OnInit {
   clickMessage= ''
 
+  books = [];
+  bookList : BookResponse;
+
   constructor(private bookService: BookService) { }
 
   ngOnInit(): void {
-    this.bookService.getBooks().subscribe((data: any[]) => {
-      console.log(data);
+      console.log(this.books);this.bookService.getBooks().subscribe((data) => {
+      this.bookList = data;
+      console.log(this.bookList.items);
       
+
+
     })
   }
 
 
   onClickMe(str:string) {
-    this.clickMessage = this.getBooks.get;
-    alert(this.clickMessage + str);
+    this.bookService.getBooks().subscribe((data: any[]) => {
+      console.log(data);
+      this.books = data;
+
+    })
   }
 
-  getBooks(){
-    //BookService.get
-
-  }
 }
