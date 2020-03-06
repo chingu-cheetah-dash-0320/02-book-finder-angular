@@ -13,6 +13,8 @@ export class BookDetailComponent implements OnInit {
   @Input() author:string;
   @Input() publishedDate:string;
   @Input() description:string;
+  @Input() infoLink:string;
+  @Input() publisher:string;
 
 
   constructor() { }

@@ -10,6 +10,9 @@ import { BookService } from './services/book.service';
 import { MainComponent } from './main/main.component';
 import {HttpClientModule } from '@angular/common/http';
 import {MatProgressSpinnerModule} from '@angular/material/progress-spinner';
+import {MatButtonModule} from '@angular/material/button';
+
+import 'hammerjs';
 
 @NgModule({
   declarations: [
@@ -23,6 +26,7 @@ import {MatProgressSpinnerModule} from '@angular/material/progress-spinner';
     MatSliderModule,
     MatProgressSpinnerModule,
     MatToolbarModule,
+    MatButtonModule,
     FlexLayoutModule,
     HttpClientModule
   ],
