@@ -50,3 +50,8 @@
     text-decoration: none !important;
   
 }
+
+.btn-group{
+    margin: 10px auto 20px auto;
+    width: 50%;
+}
