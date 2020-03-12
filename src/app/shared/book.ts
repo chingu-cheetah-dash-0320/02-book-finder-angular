@@ -1,10 +1,5 @@
-export interface BookResponse {
-    kind?:       string;
-    totalItems?: number;
-    items?:      Item[];
-}
 
-interface Item {
+export interface Book {
     kind?:       Kind;
     id?:         string;
     etag?:       string;
